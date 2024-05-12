@@ -18,12 +18,10 @@ public class Main {
 
         ArticleTypeEnum articleType = ArticleTypeEnum.fromUrl(url);
 
-
         WebsiteInformation web = new WebsiteInformation();
         web.setTitle(elements.select(".mw-page-title-main").text());
         web.setDetailed(elements.select("p").text());
         web.setType(articleType);
-
 
         Gson gson = new Gson();
         String Json = gson.toJson(web);
