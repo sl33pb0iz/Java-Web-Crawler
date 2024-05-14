@@ -29,6 +29,7 @@ public class BlockChainComController extends WebCrawlController {
         web.setAuthor(elements.select(".sc-cba31b2d-7.gPdnYn").text());
         web.setCategory("");
 
+        // test pull
         Gson gson = new Gson();
         String Json = gson.toJson(web);
         System.out.println(Json);
