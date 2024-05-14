@@ -4,6 +4,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import src.scripts.models.WebsiteInformation;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class UpgradComBuilder extends WebCrawlController{
     @Override
     public String getLinkFile() {
@@ -46,12 +49,16 @@ public class UpgradComBuilder extends WebCrawlController{
 
     @Override
     public void buildType(WebsiteInformation web) {
-
-        String[] parts = currentUrl.split("\\.");
-
-        if (parts.length > 1 && parts[0].equals("www")) {
-            String type = parts[1];
-            web.setType(type);
+        try {
+            URL url = new URL(currentUrl);
+            String host = url.getHost();
+            String[] parts = host.split("\\.");
+            if (parts.length > 1) {
+                String type = parts[parts.length - 2]; // Get the second last part of the host
+                web.setType(type);
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
     }
 
