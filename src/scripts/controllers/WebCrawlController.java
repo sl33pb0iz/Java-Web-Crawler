@@ -1,5 +1,7 @@
 package src.scripts.controllers;
 
+import src.scripts.models.WebsiteInformation;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -7,9 +9,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WebCrawlController {
-    public void ReadDataFromFile(String linkFile) throws IOException {
-        // File path is passed as parameter
+public abstract class WebCrawlController {
+    public void readDataFromFile(String linkFile) throws IOException {
         File file = new File(linkFile);
 
         BufferedReader br
@@ -32,7 +33,14 @@ public class WebCrawlController {
         }
     }
 
-    public void CrawlDataFrom(String url) throws IOException {
-
-    }
+    public abstract void CrawlDataFrom(String url) throws IOException;
+    public abstract void setLink(WebsiteInformation web);
+    public abstract void setSource(WebsiteInformation websiteInformation);
+    public abstract void setType(WebsiteInformation web);
+    public abstract void setSummary(WebsiteInformation web);
+    public abstract void setDetail(WebsiteInformation web);
+    public abstract void setCreationDate(WebsiteInformation web);
+    public abstract void setAssociated(WebsiteInformation web);
+    public abstract void setAuthor(WebsiteInformation web);
+    public abstract void setCategory(WebsiteInformation web);
 }

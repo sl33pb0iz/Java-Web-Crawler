@@ -6,37 +6,79 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import src.scripts.models.WebsiteInformation;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class WikipediaCrawlController extends WebCrawlController {
-
     public void ReadDataFromFile() throws IOException{
-        super.ReadDataFromFile("C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\WikipediaUrl");
+        super.readDataFromFile("C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\WikipediaUrl");
     }
+
+    Document doc;
+    Elements elements;
+
     @Override
     public void CrawlDataFrom(String url) throws IOException {
-        Document doc = Jsoup.connect(url).get();
-        Elements elements = doc.select(".mw-page-container");
+        doc = Jsoup.connect(url).get();
+        elements = doc.select(".mw-page-container");
 
         WebsiteInformation web = new WebsiteInformation();
-        web.setType("Wikipedia");
-        web.setLink(url);
-        web.setSource("");
-        web.setSummary("");
-        web.setTitle(elements.select(".mw-page-title-main").text());
-        web.setDetailed(elements.select("p").text());
-        web.setCreationDate(elements.select("#footer-info-lastmod").text());
-        web.setAssociated("");
-        web.setAuthor(elements.select(".noprint").text());
-        web.setCategory("");
+
+        setType(web);
+        setDetail(web);
+        setAssociated(web);
+        setCategory(web);
+        setCreationDate(web);
+        setAuthor(web);
+        setSummary(web);
+        setLink(web);
+        setSource(web);
+        setCategory(web);
 
         Gson gson = new Gson();
         String Json = gson.toJson(web);
         System.out.println(Json);
+    }
+
+    @Override
+    public void setLink(WebsiteInformation web) {
+    }
+
+    @Override
+    public void setSource(WebsiteInformation websiteInformation) {
+
+    }
+
+    @Override
+    public void setType(WebsiteInformation web) {
+    }
+
+    @Override
+    public void setSummary(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void setDetail(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void setCreationDate(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void setAssociated(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void setAuthor(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void setCategory(WebsiteInformation web) {
+
     }
 }

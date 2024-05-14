@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class BlockChainComController extends WebCrawlController {
     public void ReadDataFromFile() throws IOException {
-        super.ReadDataFromFile("C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\BlockchaincomUrl");
+        super.readDataFromFile("C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\BlockchaincomUrl");
     }
     @Override
     public void CrawlDataFrom(String url) throws IOException {
@@ -33,5 +33,50 @@ public class BlockChainComController extends WebCrawlController {
         Gson gson = new Gson();
         String Json = gson.toJson(web);
         System.out.println(Json);
+    }
+
+    @Override
+    public void setLink(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void setSource(WebsiteInformation websiteInformation) {
+
+    }
+
+    @Override
+    public void setType(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void setSummary(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void setDetail(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void setCreationDate(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void setAssociated(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void setAuthor(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void setCategory(WebsiteInformation web) {
+
     }
 }
