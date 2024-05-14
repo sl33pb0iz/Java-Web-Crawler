@@ -3,11 +3,11 @@ package src.scripts.models;
 public class WebsiteInformation {
     private String link;
     private String source;
-    private ArticleTypeEnum type;
+    private String type;
     private String summary;
     private String title;
     private String Detailed;
-    private String Creation;
+    private String CreationDate;
     private String Associated;
     private String Author;
     private String Category;
@@ -28,11 +28,11 @@ public class WebsiteInformation {
         this.source = source;
     }
 
-    public ArticleTypeEnum getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(ArticleTypeEnum type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -60,12 +60,12 @@ public class WebsiteInformation {
         Detailed = detailed;
     }
 
-    public String getCreation() {
-        return Creation;
+    public String getCreationDate() {
+        return CreationDate;
     }
 
-    public void setCreation(String creation) {
-        Creation = creation;
+    public void setCreationDate(String CreationDate) {
+        this.CreationDate = CreationDate;
     }
 
     public String getAssociated() {
