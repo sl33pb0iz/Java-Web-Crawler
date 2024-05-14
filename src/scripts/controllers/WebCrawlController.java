@@ -3,17 +3,16 @@ package src.scripts.controllers;
 import com.google.gson.Gson;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 import src.scripts.models.WebsiteInformation;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public abstract class WebCrawlController {
+    private List<WebsiteInformation> websiteList = new ArrayList<>();
+
     public void readDataFromFile() throws IOException {
         File file = new File(getLinkFile());
 
@@ -37,26 +36,31 @@ public abstract class WebCrawlController {
         }
     }
 
-    public void crawlDataFrom(String url) throws IOException {
-        Document doc = Jsoup.connect(url).get();
-        Elements elements = doc.select(getContainer());
+    protected Document doc;
+    protected String currentUrl;
 
-        WebsiteInformation web = buildWebsiteInformation(elements);
+    public void crawlDataFrom(String url) throws IOException {
+        currentUrl = url;
+        doc = Jsoup.connect(currentUrl).get();
+
+        WebsiteInformation web = buildWebsiteInformation();
+        websiteList.add(web);
 
         Gson gson = new Gson();
-        String Json = gson.toJson(web);
-        System.out.println(Json);
+        String jsonList = gson.toJson(websiteList);
+
+        try (FileWriter writer = new FileWriter("D:\\Java\\New folder\\Java-Web-Crawler\\src\\resources\\jsonData\\UpgradJSON")) {
+            writer.write(jsonList);
+        }
+
     }
 
     // Override phương thức này để trả về đường link
     public abstract String getLinkFile();
 
-    // Override phương thức này để trả về container nơi chứa các thuộc tính cần lấy
-    public abstract String getContainer();
-
     // Override phương thức này để build ra class websiteinformation
     // và cho nó sẽ gọi tới cái build bên dưới để build ra từng thuộc tính
-    public abstract WebsiteInformation buildWebsiteInformation(Elements elements);
+    public abstract WebsiteInformation buildWebsiteInformation();
 
     // Các phương thức bên dưới sẽ lấy các giá trị từ link website
     // và thực hiện các tính toán, thay đổi để set thông tin cho websiteinformation class

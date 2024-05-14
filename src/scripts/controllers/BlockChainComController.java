@@ -1,10 +1,13 @@
 package src.scripts.controllers;
 
-import org.jsoup.select.Elements;
+import src.scripts.Main;
 import src.scripts.models.WebsiteInformation;
 
 public class BlockChainComController extends WebCrawlController {
-    private Elements elements;
+    public BlockChainComController(){
+        Main.webCrawlControllers.add(this);
+    }
+
 
     @Override
     public String getLinkFile() {
@@ -12,13 +15,7 @@ public class BlockChainComController extends WebCrawlController {
     }
 
     @Override
-    public String getContainer() {
-        return ".sc-5933466a-1.ecdyKA";
-    }
-
-    @Override
-    public WebsiteInformation buildWebsiteInformation(Elements elements) {
-        this.elements = elements;
+    public WebsiteInformation buildWebsiteInformation() {
 
         WebsiteInformation web = new WebsiteInformation();
         buildTitle(web);
