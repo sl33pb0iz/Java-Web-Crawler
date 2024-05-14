@@ -9,30 +9,26 @@ import src.scripts.models.WebsiteInformation;
 import java.io.IOException;
 
 public class WikipediaCrawlController extends WebCrawlController {
-    public void ReadDataFromFile() throws IOException{
-        super.readDataFromFile("C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\WikipediaUrl");
-    }
-
     Document doc;
     Elements elements;
 
     @Override
-    public void CrawlDataFrom(String url) throws IOException {
+    public void crawlDataFrom(String url) throws IOException {
         doc = Jsoup.connect(url).get();
         elements = doc.select(".mw-page-container");
 
         WebsiteInformation web = new WebsiteInformation();
 
-        setType(web);
-        setDetail(web);
-        setAssociated(web);
-        setCategory(web);
-        setCreationDate(web);
-        setAuthor(web);
-        setSummary(web);
-        setLink(web);
-        setSource(web);
-        setCategory(web);
+        buildType(web);
+        buildDetail(web);
+        buildAssociated(web);
+        buildCategory(web);
+        buildCreationDate(web);
+        buildAuthor(web);
+        buildSummary(web);
+        buildLink(web);
+        buildSource(web);
+        buildCategory(web);
 
         Gson gson = new Gson();
         String Json = gson.toJson(web);
@@ -40,45 +36,65 @@ public class WikipediaCrawlController extends WebCrawlController {
     }
 
     @Override
-    public void setLink(WebsiteInformation web) {
+    public String getLinkFile() {
+        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\resources\\WikipediaUrl";
     }
 
     @Override
-    public void setSource(WebsiteInformation websiteInformation) {
-
+    public String getContainer() {
+        return null;
     }
 
     @Override
-    public void setType(WebsiteInformation web) {
+    public WebsiteInformation buildWebsiteInformation(Elements elements) {
+        return null;
     }
 
     @Override
-    public void setSummary(WebsiteInformation web) {
-
-    }
-
-    @Override
-    public void setDetail(WebsiteInformation web) {
-
-    }
-
-    @Override
-    public void setCreationDate(WebsiteInformation web) {
+    public void buildTitle(WebsiteInformation web) {
 
     }
 
     @Override
-    public void setAssociated(WebsiteInformation web) {
+    public void buildLink(WebsiteInformation web) {
+    }
+
+    @Override
+    public void buildSource(WebsiteInformation websiteInformation) {
 
     }
 
     @Override
-    public void setAuthor(WebsiteInformation web) {
+    public void buildType(WebsiteInformation web) {
+    }
+
+    @Override
+    public void buildSummary(WebsiteInformation web) {
 
     }
 
     @Override
-    public void setCategory(WebsiteInformation web) {
+    public void buildDetail(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildCreationDate(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildAssociated(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildAuthor(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildCategory(WebsiteInformation web) {
 
     }
 }

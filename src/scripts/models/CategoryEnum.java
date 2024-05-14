@@ -1,6 +1,6 @@
 package src.scripts.models;
 
-public enum CategoryEnum : byte
+public enum CategoryEnum
 {
 
 }

@@ -1,82 +1,87 @@
 package src.scripts.controllers;
 
-import com.google.gson.Gson;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import src.scripts.models.WebsiteInformation;
 
-import java.io.IOException;
-
 public class BlockChainComController extends WebCrawlController {
-    public void ReadDataFromFile() throws IOException {
-        super.readDataFromFile("C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\BlockchaincomUrl");
-    }
+    private Elements elements;
+
     @Override
-    public void CrawlDataFrom(String url) throws IOException {
-        Document doc = Jsoup.connect(url).get();
-        Elements elements = doc.select(".sc-5933466a-1.ecdyKA");
+    public String getLinkFile() {
+        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\resources\\BlockchaincomUrl";
+    }
+
+    @Override
+    public String getContainer() {
+        return ".sc-5933466a-1.ecdyKA";
+    }
+
+    @Override
+    public WebsiteInformation buildWebsiteInformation(Elements elements) {
+        this.elements = elements;
 
         WebsiteInformation web = new WebsiteInformation();
-        web.setType("blog");
-        web.setLink(url);
-        web.setSource("");
-        web.setSummary("");
-        web.setTitle(elements.select(".sc-1f19948b-5.fOSzTG").text());
-        web.setDetailed(elements.select(".sc-1f19948b-6.gTWyeq").text() + elements.select(".sc-1f19948b-7.fWlASx").text());
-        web.setCreationDate(elements.select(".sc-cba31b2d-8.bEKtyJ").text());
-        web.setAssociated("");
-        web.setAuthor(elements.select(".sc-cba31b2d-7.gPdnYn").text());
-        web.setCategory("");
+        buildTitle(web);
+        buildLink(web);
+        buildSource(web);
+        buildType(web);
+        buildSummary(web);
+        buildDetail(web);
+        buildCreationDate(web);
+        buildAssociated(web);
+        buildSummary(web);
+        buildCategory(web);
 
-        // test pull
-        Gson gson = new Gson();
-        String Json = gson.toJson(web);
-        System.out.println(Json);
+        return web;
     }
 
     @Override
-    public void setLink(WebsiteInformation web) {
-
-    }
-
-    @Override
-    public void setSource(WebsiteInformation websiteInformation) {
+    public void buildTitle(WebsiteInformation web) {
 
     }
 
     @Override
-    public void setType(WebsiteInformation web) {
+    public void buildLink(WebsiteInformation web) {
 
     }
 
     @Override
-    public void setSummary(WebsiteInformation web) {
+    public void buildSource(WebsiteInformation websiteInformation) {
 
     }
 
     @Override
-    public void setDetail(WebsiteInformation web) {
+    public void buildType(WebsiteInformation web) {
 
     }
 
     @Override
-    public void setCreationDate(WebsiteInformation web) {
+    public void buildSummary(WebsiteInformation web) {
 
     }
 
     @Override
-    public void setAssociated(WebsiteInformation web) {
+    public void buildDetail(WebsiteInformation web) {
 
     }
 
     @Override
-    public void setAuthor(WebsiteInformation web) {
+    public void buildCreationDate(WebsiteInformation web) {
 
     }
 
     @Override
-    public void setCategory(WebsiteInformation web) {
+    public void buildAssociated(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildAuthor(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildCategory(WebsiteInformation web) {
 
     }
 }
