@@ -9,26 +9,13 @@ import java.net.URL;
 
 public class UpgradComBuilder extends WebCrawlController{
     @Override
-    public String getLinkFile() {
-        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\resources\\url\\UpgradUrl";
+    public String getlinkFileCategory() {
+        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\jsonData\\UpgradJSON";
     }
 
     @Override
-    public WebsiteInformation buildWebsiteInformation() {
-        WebsiteInformation web = new WebsiteInformation();
-        buildTitle(web);
-        buildLink(web);
-        buildSource(web);
-        buildType(web);
-        buildSummary(web);
-        buildDetail(web);
-        buildCreationDate(web);
-        buildAssociated(web);
-        buildSummary(web);
-        buildCategory(web);
-        buildAuthor(web);
-
-        return web;
+    public String getLinkFile() {
+        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\url\\UpgradUrl";
     }
 
     @Override

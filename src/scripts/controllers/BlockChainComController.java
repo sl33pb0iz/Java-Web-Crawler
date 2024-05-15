@@ -8,10 +8,14 @@ public class BlockChainComController extends WebCrawlController {
         Main.webCrawlControllers.add(this);
     }
 
+    @Override
+    public String getlinkFileCategory() {
+        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\jsonData\\Category2";
+    }
 
     @Override
     public String getLinkFile() {
-        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\resources\\BlockchaincomUrl";
+        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\url\\BlockchaincomUrl";
     }
 
     @Override
@@ -34,12 +38,12 @@ public class BlockChainComController extends WebCrawlController {
 
     @Override
     public void buildTitle(WebsiteInformation web) {
-
+        web.setTitle(doc.select(".sc-1f19948b-5.fOSzTG").text());
     }
 
     @Override
     public void buildLink(WebsiteInformation web) {
-
+        web.setLink(currentUrl);
     }
 
     @Override
@@ -59,12 +63,12 @@ public class BlockChainComController extends WebCrawlController {
 
     @Override
     public void buildDetail(WebsiteInformation web) {
-
+        web.setDetailed(doc.select(".sc-1f19948b-6.gTWyeq").text() + doc.select(".sc-1f19948b-7.fWlASx").text());
     }
 
     @Override
     public void buildCreationDate(WebsiteInformation web) {
-
+        web.setCreationDate(doc.select(".sc-cba31b2d-8.bEKtyJ").text());
     }
 
     @Override
@@ -74,61 +78,11 @@ public class BlockChainComController extends WebCrawlController {
 
     @Override
     public void buildAuthor(WebsiteInformation web) {
-
+        web.setAuthor(doc.select(".sc-cba31b2d-7.gPdnYn").text());
     }
 
     @Override
     public void buildCategory(WebsiteInformation web) {
 
-    }
-
-    @Override
-    public void setLink(WebsiteInformation web, String url) {
-        web.setLink(url);
-    }
-
-    @Override
-    public void setSource(WebsiteInformation web) {
-        web.setSource("");
-    }
-
-    @Override
-    public void setType(WebsiteInformation web) {
-        web.setType("blog");
-    }
-
-    @Override
-    public void setSummary(WebsiteInformation web) {
-        web.setSummary("");
-    }
-
-    @Override
-    public void setTitle(WebsiteInformation web) {
-        web.setTitle(elements.select(".sc-1f19948b-5.fOSzTG").text());
-    }
-
-    @Override
-    public void setDetail(WebsiteInformation web) {
-        web.setDetailed(elements.select(".sc-1f19948b-6.gTWyeq").text() + elements.select(".sc-1f19948b-7.fWlASx").text());
-    }
-
-    @Override
-    public void setCreationDate(WebsiteInformation web) {
-        web.setCreationDate(elements.select(".sc-cba31b2d-8.bEKtyJ").text());
-    }
-
-    @Override
-    public void setAssociated(WebsiteInformation web) {
-        web.setAssociated("");
-    }
-
-    @Override
-    public void setAuthor(WebsiteInformation web) {
-        web.setAuthor(elements.select(".sc-cba31b2d-7.gPdnYn").text());
-    }
-
-    @Override
-    public void setCategory(WebsiteInformation web) {
-        web.setCategory("");
     }
 }

@@ -1,5 +1,6 @@
 package src.scripts;
 
+import src.scripts.controllers.BlockChainComController;
 import src.scripts.controllers.UpgradComBuilder;
 import src.scripts.controllers.WebCrawlController;
 import src.scripts.controllers.WikipediaCrawlController;
@@ -14,7 +15,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
         WebCrawlController crawler = new UpgradComBuilder();
         WebCrawlController crawler1 = new WikipediaCrawlController();
-
+        WebCrawlController crawler2 = new BlockChainComController();
         crawler.readDataFromFile();
+        crawler1.readDataFromFile();
+        crawler2.readDataFromFile();
     }
 }

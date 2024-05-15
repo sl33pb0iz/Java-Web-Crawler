@@ -1,5 +1,6 @@
 package src.scripts.controllers;
 
+import org.jsoup.select.Elements;
 import src.scripts.Main;
 import src.scripts.models.WebsiteInformation;
 
@@ -9,22 +10,24 @@ public class WikipediaCrawlController extends WebCrawlController {
     }
 
     @Override
-    public String getLinkFile() {
-        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\resources\\WikipediaUrl";
+    public String getlinkFileCategory() {
+        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\jsonData\\Category1";
     }
 
     @Override
-    public WebsiteInformation buildWebsiteInformation() {
-        return null;
+    public String getLinkFile() {
+        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\url\\WikipediaUrl";
     }
 
     @Override
     public void buildTitle(WebsiteInformation web) {
-
+        Elements elements = doc.select(".mw-page-title-main");
+        web.setTitle(elements.text());
     }
 
     @Override
     public void buildLink(WebsiteInformation web) {
+        web.setLink(currentUrl);
     }
 
     @Override
@@ -34,6 +37,7 @@ public class WikipediaCrawlController extends WebCrawlController {
 
     @Override
     public void buildType(WebsiteInformation web) {
+
     }
 
     @Override
@@ -43,12 +47,13 @@ public class WikipediaCrawlController extends WebCrawlController {
 
     @Override
     public void buildDetail(WebsiteInformation web) {
-
+        Elements elements = doc.select("p");
+        web.setTitle(elements.text());
     }
 
     @Override
     public void buildCreationDate(WebsiteInformation web) {
-
+        web.setCreationDate(doc.select("#footer-info-lastmod").text());
     }
 
     @Override
@@ -66,53 +71,4 @@ public class WikipediaCrawlController extends WebCrawlController {
 
     }
 
-    @Override
-    public void setLink(WebsiteInformation web, String url) {
-        web.setLink(url);
-    }
-
-    @Override
-    public void setSource(WebsiteInformation web) {
-        web.setSource("");
-    }
-
-    @Override
-    public void setType(WebsiteInformation web) {
-        web.setType("");
-    }
-
-    @Override
-    public void setSummary(WebsiteInformation web) {
-        web.setSummary("");
-    }
-
-    @Override
-    public void setTitle(WebsiteInformation web) {
-        web.setTitle(elements.select(".mw-page-title-main").text());
-    }
-
-    @Override
-    public void setDetail(WebsiteInformation web) {
-        web.setDetailed(elements.select("p").text());
-    }
-
-    @Override
-    public void setCreationDate(WebsiteInformation web) {
-        web.setCreationDate(elements.select("#footer-info-lastmod").text());
-    }
-
-    @Override
-    public void setAssociated(WebsiteInformation web) {
-        web.setAssociated("");
-    }
-
-    @Override
-    public void setAuthor(WebsiteInformation web) {
-        web.setAuthor("");
-    }
-
-    @Override
-    public void setCategory(WebsiteInformation web) {
-        web.setCategory("");
-    }
 }
