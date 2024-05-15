@@ -1,39 +1,69 @@
 package src.scripts.controllers;
 
-import com.google.gson.Gson;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
+import src.scripts.Main;
 import src.scripts.models.WebsiteInformation;
 
-import java.io.IOException;
-
 public class WikipediaCrawlController extends WebCrawlController {
-    public void ReadDataFromFile() throws IOException{
-        super.readDataFromFile("C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\WikipediaUrl");
+    public WikipediaCrawlController(){
+        Main.webCrawlControllers.add(this);
     }
 
     @Override
-    public void CrawlDataFrom(String url) throws IOException {
-        doc = Jsoup.connect(url).get();
-        elements = doc.select(".mw-page-container");
+    public String getLinkFile() {
+        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\resources\\WikipediaUrl";
+    }
 
-        WebsiteInformation web = new WebsiteInformation();
+    @Override
+    public WebsiteInformation buildWebsiteInformation() {
+        return null;
+    }
 
-        setType(web);
-        setDetail(web);
-        setAssociated(web);
-        setCategory(web);
-        setCreationDate(web);
-        setAuthor(web);
-        setSummary(web);
-        setLink(web,url);
-        setSource(web);
-        setCategory(web);
+    @Override
+    public void buildTitle(WebsiteInformation web) {
 
-        Gson gson = new Gson();
-        String Json = gson.toJson(web);
-        System.out.println(Json);
+    }
+
+    @Override
+    public void buildLink(WebsiteInformation web) {
+    }
+
+    @Override
+    public void buildSource(WebsiteInformation websiteInformation) {
+
+    }
+
+    @Override
+    public void buildType(WebsiteInformation web) {
+    }
+
+    @Override
+    public void buildSummary(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildDetail(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildCreationDate(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildAssociated(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildAuthor(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildCategory(WebsiteInformation web) {
+
     }
 
     @Override

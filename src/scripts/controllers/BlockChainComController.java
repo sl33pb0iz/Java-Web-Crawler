@@ -1,39 +1,85 @@
 package src.scripts.controllers;
 
-import com.google.gson.Gson;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
+import src.scripts.Main;
 import src.scripts.models.WebsiteInformation;
 
-import java.io.IOException;
-
 public class BlockChainComController extends WebCrawlController {
-
-    public void ReadDataFromFile() throws IOException {
-        super.readDataFromFile("C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\BlockchaincomUrl");
+    public BlockChainComController(){
+        Main.webCrawlControllers.add(this);
     }
+
+
     @Override
-    public void CrawlDataFrom(String url) throws IOException {
-        doc = Jsoup.connect(url).get();
-        elements = doc.select(".sc-5933466a-1.ecdyKA");
+    public String getLinkFile() {
+        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\resources\\BlockchaincomUrl";
+    }
+
+    @Override
+    public WebsiteInformation buildWebsiteInformation() {
 
         WebsiteInformation web = new WebsiteInformation();
-        setType(web);
-        setLink(web, url);
-        setSource(web);
-        setSummary(web);
-        setTitle(web);
-        setDetail(web);
-        setCreationDate(web);
-        setAssociated(web);
-        setAuthor(web);
-        setCategory(web);
+        buildTitle(web);
+        buildLink(web);
+        buildSource(web);
+        buildType(web);
+        buildSummary(web);
+        buildDetail(web);
+        buildCreationDate(web);
+        buildAssociated(web);
+        buildSummary(web);
+        buildCategory(web);
 
-        // test pull
-        Gson gson = new Gson();
-        String Json = gson.toJson(web);
-        System.out.println(Json);
+        return web;
+    }
+
+    @Override
+    public void buildTitle(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildLink(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildSource(WebsiteInformation websiteInformation) {
+
+    }
+
+    @Override
+    public void buildType(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildSummary(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildDetail(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildCreationDate(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildAssociated(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildAuthor(WebsiteInformation web) {
+
+    }
+
+    @Override
+    public void buildCategory(WebsiteInformation web) {
+
     }
 
     @Override
