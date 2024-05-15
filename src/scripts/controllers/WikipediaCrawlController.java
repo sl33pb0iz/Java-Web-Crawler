@@ -13,9 +13,6 @@ public class WikipediaCrawlController extends WebCrawlController {
         super.readDataFromFile("C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\WikipediaUrl");
     }
 
-    Document doc;
-    Elements elements;
-
     @Override
     public void CrawlDataFrom(String url) throws IOException {
         doc = Jsoup.connect(url).get();
@@ -30,7 +27,7 @@ public class WikipediaCrawlController extends WebCrawlController {
         setCreationDate(web);
         setAuthor(web);
         setSummary(web);
-        setLink(web);
+        setLink(web,url);
         setSource(web);
         setCategory(web);
 
@@ -40,45 +37,52 @@ public class WikipediaCrawlController extends WebCrawlController {
     }
 
     @Override
-    public void setLink(WebsiteInformation web) {
+    public void setLink(WebsiteInformation web, String url) {
+        web.setLink(url);
     }
 
     @Override
-    public void setSource(WebsiteInformation websiteInformation) {
-
+    public void setSource(WebsiteInformation web) {
+        web.setSource("");
     }
 
     @Override
     public void setType(WebsiteInformation web) {
+        web.setType("");
     }
 
     @Override
     public void setSummary(WebsiteInformation web) {
+        web.setSummary("");
+    }
 
+    @Override
+    public void setTitle(WebsiteInformation web) {
+        web.setTitle(elements.select(".mw-page-title-main").text());
     }
 
     @Override
     public void setDetail(WebsiteInformation web) {
-
+        web.setDetailed(elements.select("p").text());
     }
 
     @Override
     public void setCreationDate(WebsiteInformation web) {
-
+        web.setCreationDate(elements.select("#footer-info-lastmod").text());
     }
 
     @Override
     public void setAssociated(WebsiteInformation web) {
-
+        web.setAssociated("");
     }
 
     @Override
     public void setAuthor(WebsiteInformation web) {
-
+        web.setAuthor("");
     }
 
     @Override
     public void setCategory(WebsiteInformation web) {
-
+        web.setCategory("");
     }
 }

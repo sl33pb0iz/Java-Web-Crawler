@@ -1,5 +1,7 @@
 package src.scripts.controllers;
 
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import src.scripts.models.WebsiteInformation;
 
 import java.io.BufferedReader;
@@ -10,6 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class WebCrawlController {
+    protected Document doc;
+    protected Elements elements;
+
     public void readDataFromFile(String linkFile) throws IOException {
         File file = new File(linkFile);
 
@@ -34,10 +39,11 @@ public abstract class WebCrawlController {
     }
 
     public abstract void CrawlDataFrom(String url) throws IOException;
-    public abstract void setLink(WebsiteInformation web);
-    public abstract void setSource(WebsiteInformation websiteInformation);
+    public abstract void setLink(WebsiteInformation web,String url);
+    public abstract void setSource(WebsiteInformation web);
     public abstract void setType(WebsiteInformation web);
     public abstract void setSummary(WebsiteInformation web);
+    public abstract void setTitle(WebsiteInformation web);
     public abstract void setDetail(WebsiteInformation web);
     public abstract void setCreationDate(WebsiteInformation web);
     public abstract void setAssociated(WebsiteInformation web);
