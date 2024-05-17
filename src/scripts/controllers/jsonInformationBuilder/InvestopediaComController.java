@@ -71,5 +71,7 @@ public class InvestopediaComController extends WebCrawlController {
 
     @Override
     public void buildCategory(WebsiteInformation web) {
+        String summaryText = doc.select("p.comp.mntl-sc-block.finance-sc-block-html.mntl-sc-block-html").text();
+        web.setCategory(CategoryEnum.CategoryClassify(summaryText).toString());
     }
 }

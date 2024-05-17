@@ -9,10 +9,12 @@ public class Main {
         WebCrawlController blochainComBuilder = new BlockChainComController();
         WebCrawlController upgradComBuilder = new UpgradComBuilder();
         WebCrawlController investopediaBuilder = new InvestopediaComController();
+        WebCrawlController wikipediaBuilder = new WikipediaCrawlController();
 
         blochainComBuilder.readDataFromFile();
         upgradComBuilder.readDataFromFile();
         investopediaBuilder.readDataFromFile();
+        wikipediaBuilder.readDataFromFile();
     }
 
 }
