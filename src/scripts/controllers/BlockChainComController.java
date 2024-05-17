@@ -3,6 +3,9 @@ package src.scripts.controllers;
 import src.scripts.Main;
 import src.scripts.models.WebsiteInformation;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class BlockChainComController extends WebCrawlController {
     public BlockChainComController(){
         Main.webCrawlControllers.add(this);
@@ -47,13 +50,17 @@ public class BlockChainComController extends WebCrawlController {
     }
 
     @Override
-    public void buildSource(WebsiteInformation websiteInformation) {
+    public void buildSource(WebsiteInformation web) {
 
     }
 
     @Override
     public void buildType(WebsiteInformation web) {
-
+        String[] parts = currentUrl.split("/");
+        if (parts.length > 1) {
+            String type = parts[3] + " " + parts[4]; // Get the second last part of the host
+            web.setType(type);
+        }
     }
 
     @Override

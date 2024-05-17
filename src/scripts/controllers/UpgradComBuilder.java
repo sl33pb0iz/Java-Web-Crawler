@@ -30,22 +30,16 @@ public class UpgradComBuilder extends WebCrawlController{
     }
 
     @Override
-    public void buildSource(WebsiteInformation websiteInformation) {
+    public void buildSource(WebsiteInformation web) {
 
     }
 
     @Override
     public void buildType(WebsiteInformation web) {
-        try {
-            URL url = new URL(currentUrl);
-            String host = url.getHost();
-            String[] parts = host.split("\\.");
-            if (parts.length > 1) {
-                String type = parts[parts.length - 2]; // Get the second last part of the host
-                web.setType(type);
-            }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+        String[] parts = currentUrl.split("/");
+        if (parts.length > 1) {
+            String type = parts[3]; // Get the second last part of the host
+            web.setType(type);
         }
     }
 

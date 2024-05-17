@@ -49,6 +49,7 @@ public abstract class WebCrawlController {
 
         Gson gson = new Gson();
         String jsonList = gson.toJson(web);
+        System.out.println(jsonList);
         return jsonList;
     }
 

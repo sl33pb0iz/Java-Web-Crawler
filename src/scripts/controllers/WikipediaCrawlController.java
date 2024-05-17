@@ -31,13 +31,17 @@ public class WikipediaCrawlController extends WebCrawlController {
     }
 
     @Override
-    public void buildSource(WebsiteInformation websiteInformation) {
+    public void buildSource(WebsiteInformation web) {
 
     }
 
     @Override
     public void buildType(WebsiteInformation web) {
-
+        String[] parts = currentUrl.split("/");
+        if (parts.length > 1) {
+            String type = parts[3]; // Get the second last part of the host
+            web.setType(type);
+        }
     }
 
     @Override
