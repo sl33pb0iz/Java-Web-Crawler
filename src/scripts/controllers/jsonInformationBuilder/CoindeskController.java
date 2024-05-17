@@ -1,4 +1,4 @@
-package src.scripts.controllers;
+package src.scripts.controllers.jsonInformationBuilder;
 
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -7,7 +7,7 @@ import src.scripts.models.WebsiteInformation;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class CoindeskController extends WebCrawlController{
+public class CoindeskController extends WebCrawlController {
     @Override
     public String getlinkFileCategory() {
         return "C:\\Users\\mhung\\OneDrive\\ドキュメント\\GitHub\\Java-Web-Crawler\\src\\resources\\jsonData\\CoindeskJ";

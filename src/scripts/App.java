@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("views/dashBoardView/dashBoard.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("views/crawlDataView/crawlDataView.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1315, 810);
 
         stage.setTitle("WEB CRAWLER");

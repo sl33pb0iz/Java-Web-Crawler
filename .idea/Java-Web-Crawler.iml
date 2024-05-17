@@ -7,9 +7,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jsoup-1.17.2" level="project" />
-    <orderEntry type="library" name="gson-2.2" level="project" />
-    <orderEntry type="library" name="javafx.base" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -49,15 +46,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/javafx.graphics.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$USER_HOME$/Desktop/javafx-sdk-21.0.3/lib/javafx.media.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -77,6 +65,18 @@
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/Desktop/javafx-sdk-21.0.3/lib/javafx.web.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="jsoup-1.17.2 (2)" level="project" />
+    <orderEntry type="library" name="gson-2.2 (2)" level="project" />
+    <orderEntry type="library" name="jfoenix-21.0.0 (2)" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/javafx-sdk-21.0.3/lib/javafx.graphics.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

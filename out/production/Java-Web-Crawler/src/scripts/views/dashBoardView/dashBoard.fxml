@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -14,18 +15,18 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0" spacing="5.0" stylesheets="@../../css/style.css" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0" spacing="5.0" stylesheets="@../css/style.css" BorderPane.alignment="CENTER">
          <children>
             <HBox accessibleRole="BUTTON" alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="20.0">
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../image/dashboard.png" />
+                        <Image url="@../image/dashboard.png" />
                      </image>
                   </ImageView>
                   <Label text="Dashboard">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
                </children>
@@ -34,12 +35,12 @@
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../image/data-collection_2103533.png" />
+                        <Image url="@../image/data-collection_2103533.png" />
                      </image>
                   </ImageView>
                   <Label text="Crawl">
                      <font>
-                        <Font name="System Bold" size="15.0" />
+                        <Font size="15.0" />
                      </font>
                   </Label>
                </children>
@@ -48,7 +49,7 @@
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../image/pngegg.png" />
+                        <Image url="@../image/pngegg.png" />
                      </image>
                   </ImageView>
                   <Label text="Search">
@@ -62,7 +63,7 @@
                <children>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../image/sortOrder.png" />
+                        <Image url="@../image/sortOrder.png" />
                      </image>
                   </ImageView>
                   <Label text="Order of Algorithms">
@@ -86,15 +87,25 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="850.0" prefWidth="1065.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="1065.0" styleClass="white-background" stylesheets="@../css/style.css">
                <children>
-                  <Label layoutX="400.0" layoutY="14.0" text="Blockchain Jobs ">
-                     <font>
-                        <Font name="System Bold" size="34.0" />
-                     </font>
-                  </Label>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <HBox alignment="CENTER" maxHeight="-Infinity" prefHeight="35.0" prefWidth="250.0">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/search.png" />
+                           </image>
+                        </ImageView>
+                        <TextField blendMode="SRC_ATOP" promptText="search" styleClass="search-container" stylesheets="@../css/style.css">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
                </children>
-            </Pane>
+            </HBox>
          </children>
       </VBox>
    </center>

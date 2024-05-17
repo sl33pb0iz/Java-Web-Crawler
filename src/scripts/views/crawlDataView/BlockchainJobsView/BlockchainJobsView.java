@@ -1,2 +1,4 @@
-package src.scripts.views.crawlDataView.BlockchainJobsView;public class BlockchainJobsView {
+package src.scripts.views.crawlDataView.BlockchainJobsView;
+
+public class BlockchainJobsView {
 }
