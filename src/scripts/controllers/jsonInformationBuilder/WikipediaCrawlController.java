@@ -68,7 +68,8 @@ public class WikipediaCrawlController extends WebCrawlController {
 
     @Override
     public void buildCategory(WebsiteInformation web) {
-
+        String summaryText = doc.select("p").text();
+        web.setCategory(CategoryEnum.CategoryClassify(summaryText).toString());
     }
 
 }
