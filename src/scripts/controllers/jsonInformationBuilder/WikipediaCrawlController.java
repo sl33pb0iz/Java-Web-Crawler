@@ -1,18 +1,19 @@
 package src.scripts.controllers.jsonInformationBuilder;
 
 import org.jsoup.select.Elements;
+import src.scripts.models.CategoryEnum;
 import src.scripts.models.WebsiteInformation;
 
 public class WikipediaCrawlController extends WebCrawlController {
 
     @Override
     public String getlinkFileCategory() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\jsonData\\Category1";
+        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\WikipediaJSON";
     }
 
     @Override
     public String getLinkFile() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\url\\WikipediaUrl";
+        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\url\\WikipediaUrl";
     }
 
     @Override
@@ -64,7 +65,8 @@ public class WikipediaCrawlController extends WebCrawlController {
 
     @Override
     public void buildCategory(WebsiteInformation web) {
-
+        String summaryText = doc.select("p").text();
+        web.setCategory(CategoryEnum.CategoryClassify(summaryText).toString());
     }
 
 }

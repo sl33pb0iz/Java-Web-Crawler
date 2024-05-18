@@ -1,17 +1,18 @@
 package src.scripts.controllers.jsonInformationBuilder;
 
+import src.scripts.models.CategoryEnum;
 import src.scripts.models.WebsiteInformation;
 
 public class BlockChainComController extends WebCrawlController {
 
     @Override
     public String getlinkFileCategory() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\jsonData\\Category2";
+        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\BlockchainComJSON";
     }
 
     @Override
     public String getLinkFile() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\url\\BlockchaincomUrl";
+        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\url\\BlockchaincomUrl";
     }
 
     @Override
@@ -23,7 +24,7 @@ public class BlockChainComController extends WebCrawlController {
         buildSource(web);
         buildType(web);
         buildSummary(web);
-        buildDetail(web);
+        /*buildDetail(web);*/
         buildCreationDate(web);
         buildAssociated(web);
         buildSummary(web);
@@ -79,6 +80,7 @@ public class BlockChainComController extends WebCrawlController {
 
     @Override
     public void buildCategory(WebsiteInformation web) {
-
+        String summaryText = doc.select(".sc-1f19948b-6.gTWyeq").text() + doc.select(".sc-1f19948b-7.fWlASx").text();
+        web.setCategory(CategoryEnum.CategoryClassify(summaryText).toString());
     }
 }
