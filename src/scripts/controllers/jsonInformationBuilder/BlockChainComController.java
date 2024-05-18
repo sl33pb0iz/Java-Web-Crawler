@@ -9,12 +9,12 @@ public class BlockChainComController extends WebCrawlController {
 
     @Override
     public String getlinkFileCategory() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\jsonData\\FactsAboutBlockchain";
+        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\jsonData\\FactsAboutBlockchain";
     }
 
     @Override
     public String getLinkFile() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\url\\BlockchaincomUrl";
+        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\url\\BlockchaincomUrl";
     }
 
     @Override

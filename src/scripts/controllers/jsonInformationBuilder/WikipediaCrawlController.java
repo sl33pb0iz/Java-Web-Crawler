@@ -7,12 +7,12 @@ public class WikipediaCrawlController extends WebCrawlController {
 
     @Override
     public String getlinkFileCategory() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\jsonData\\DefinitionOfBlockchain";
+        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\jsonData\\DefinitionOfBlockchain";
     }
 
     @Override
     public String getLinkFile() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\resources\\url\\WikipediaUrl";
+        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\url\\WikipediaUrl";
     }
 
     @Override

@@ -7,12 +7,12 @@ public class InvestopediaComController extends WebCrawlController {
 
     @Override
     public String getlinkFileCategory() {
-        return "D:\\IT\\pork\\Java-Web-Crawler\\src\\datas\\jsonData\\BlockchainJobs";
+        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\jsonData\\NewsArticleBlockchain";
     }
 
     @Override
     public String getLinkFile() {
-        return "D:\\IT\\pork\\Java-Web-Crawler\\src\\datas\\url\\InvestopediaUrl";
+        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\url\\InvestopediaUrl";
     }
 
     @Override
