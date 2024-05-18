@@ -27,13 +27,12 @@ public enum CategoryEnum {
         keywordsMap.put(" definition ", Definition);
         keywordsMap.put(" distributed ", Definition);
         keywordsMap.put(" ledger ", Definition);
+        keywordsMap.put(" fact ", Fact);
         keywordsMap.put(" hash ", Fact);
         keywordsMap.put(" mining ", Fact);
         keywordsMap.put(" news ", NewsArticle);
-        keywordsMap.put(" update ", NewsArticle);
         keywordsMap.put(" announcement ", NewsArticle);
         keywordsMap.put(" release ", NewsArticle);
-        keywordsMap.put(" market ", NewsArticle);
         keywordsMap.put(" career ", Job);
         keywordsMap.put(" job ", Job);
         keywordsMap.put(" position ", Job);
