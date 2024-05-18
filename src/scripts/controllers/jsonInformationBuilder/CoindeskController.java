@@ -1,21 +1,20 @@
-package src.scripts.controllers;
+package src.scripts.controllers.jsonInformationBuilder;
 
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import src.scripts.models.WebsiteInformation;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class CoindeskController extends WebCrawlController{
+public class CoindeskController extends WebCrawlController {
     @Override
     public String getlinkFileCategory() {
-        return "C:\\Users\\mhung\\OneDrive\\ドキュメント\\GitHub\\Java-Web-Crawler\\src\\resources\\jsonData\\CoindeskJ";
+        return "F:\\j\\GitHub\\Java-Web-Crawler\\src\\datas\\jsonData\\CoindeskJSON";
     }
 
     @Override
     public String getLinkFile() {
-        return "C:\\Users\\mhung\\OneDrive\\ドキュメント\\GitHub\\Java-Web-Crawler\\src\\resources\\url\\CoindeskUrl";
+        return "F:\\j\\GitHub\\Java-Web-Crawler\\src\\datas\\url\\CoindeskUrl";
     }
 
     @Override
@@ -31,24 +30,20 @@ public class CoindeskController extends WebCrawlController{
 
     @Override
     public void buildSource(WebsiteInformation websiteInformation) {
-
-    }
-
-    @Override
-    public void buildType(WebsiteInformation web) {
+        // Assuming that the source is the host of the current URL
         try {
             URL url = new URL(currentUrl);
-            String host = url.getHost();
-            String[] parts = host.split("\\.");
-            if (parts.length > 1) {
-                String type = parts[parts.length - 2]; // Get the second last part of the host
-                web.setType(type);
-            }
+            websiteInformation.setSource(url.getHost());
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
     }
-
+    
+    @Override
+    public void buildType(WebsiteInformation web) {
+        // Assuming that the type is a fixed string for this controller
+        web.setType("Coindesk");
+    }
     @Override
     public void buildSummary(WebsiteInformation web) {
         Elements paragraphs = doc.select("h2.typography__StyledTypography-sc-owin6q-0.sVcXY");
