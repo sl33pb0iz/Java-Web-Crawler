@@ -1,5 +1,6 @@
 package src.scripts.controllers.jsonInformationBuilder;
 
+import src.scripts.models.CategoryEnum;
 import src.scripts.models.WebsiteInformation;
 
 import java.net.MalformedURLException;
@@ -8,31 +9,8 @@ import java.net.URL;
 public class BlockChainComController extends WebCrawlController {
 
     @Override
-    public String getlinkFileCategory() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\jsonData\\FactsAboutBlockchain";
-    }
-
-    @Override
     public String getLinkFile() {
         return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\url\\BlockchaincomUrl";
-    }
-
-    @Override
-    public WebsiteInformation buildWebsiteInformation() {
-
-        WebsiteInformation web = new WebsiteInformation();
-        buildTitle(web);
-        buildLink(web);
-        buildSource(web);
-        buildType(web);
-        buildSummary(web);
-        buildDetail(web);
-        buildCreationDate(web);
-        buildAssociated(web);
-        buildSummary(web);
-        buildCategory(web);
-
-        return web;
     }
 
     @Override
@@ -86,6 +64,7 @@ public class BlockChainComController extends WebCrawlController {
 
     @Override
     public void buildCategory(WebsiteInformation web) {
-
+        String summaryText = doc.select(".sc-1f19948b-6.gTWyeq").text() + doc.select(".sc-1f19948b-7.fWlASx").text();
+        web.setCategory(CategoryEnum.CategoryClassify(summaryText).toString());
     }
 }

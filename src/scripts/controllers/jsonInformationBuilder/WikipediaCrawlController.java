@@ -1,14 +1,10 @@
 package src.scripts.controllers.jsonInformationBuilder;
 
 import org.jsoup.select.Elements;
+import src.scripts.models.CategoryEnum;
 import src.scripts.models.WebsiteInformation;
 
 public class WikipediaCrawlController extends WebCrawlController {
-
-    @Override
-    public String getlinkFileCategory() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\jsonData\\DefinitionOfBlockchain";
-    }
 
     @Override
     public String getLinkFile() {

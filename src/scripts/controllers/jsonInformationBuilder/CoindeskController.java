@@ -8,10 +8,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class CoindeskController extends WebCrawlController {
-    @Override
-    public String getlinkFileCategory() {
-        return "C:\\Users\\mhung\\OneDrive\\ドキュメント\\GitHub\\Java-Web-Crawler\\src\\resources\\jsonData\\CoindeskJ";
-    }
 
     @Override
     public String getLinkFile() {
@@ -94,6 +90,5 @@ public class CoindeskController extends WebCrawlController {
 
     @Override
     public void buildCategory(WebsiteInformation web) {
-
     }
 }

@@ -8,10 +8,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class UpgradComBuilder extends WebCrawlController{
-    @Override
-    public String getlinkFileCategory() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\jsonData\\FactsAboutBlockchain";
-    }
 
     @Override
     public String getLinkFile() {

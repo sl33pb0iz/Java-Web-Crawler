@@ -7,17 +7,11 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         WebCrawlController blochainComBuilder = new BlockChainComController();
-        WebCrawlController upgradComBuilder = new UpgradComBuilder();
-        WebCrawlController investopediaBuilder = new InvestopediaComController();
-        WebCrawlController wikipediaBuilder = new WikipediaCrawlController();
-        WebCrawlController CoindeskController = new CoindeskController();
-
+        WebCrawlController WikipediaCrawlController = new WikipediaCrawlController();
+        WebCrawlController InvestopediaComController = new InvestopediaComController();
 
         blochainComBuilder.readDataFromFile();
-        upgradComBuilder.readDataFromFile();
-        investopediaBuilder.readDataFromFile();
-        wikipediaBuilder.readDataFromFile();
-        CoindeskController.readDataFromFile();
+        WikipediaCrawlController.readDataFromFile();
+        InvestopediaComController.readDataFromFile();
     }
-
 }

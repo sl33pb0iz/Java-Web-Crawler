@@ -4,10 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum CategoryEnum {
-    Definition,
-    Fact,
-    NewsArticle,
-    Job,
+    DefinitionOfBlockchain,
+    FactsAboutBlockchain,
+    NewsArticleBlockchain,
+    BlockchainJobs,
     Other;
 
     public static CategoryEnum CategoryClassify(String value) {
@@ -18,25 +18,25 @@ public enum CategoryEnum {
         value = value.toLowerCase();
 
         Map<CategoryEnum, Integer> categoryCounts = new HashMap<>();
-        categoryCounts.put(Definition, 0);
-        categoryCounts.put(Fact, 0);
-        categoryCounts.put(NewsArticle, 0);
-        categoryCounts.put(Job, 0);
+        categoryCounts.put(DefinitionOfBlockchain, 0);
+        categoryCounts.put(FactsAboutBlockchain, 0);
+        categoryCounts.put(NewsArticleBlockchain, 0);
+        categoryCounts.put(BlockchainJobs, 0);
 
         Map<String, CategoryEnum> keywordsMap = new HashMap<>();
-        keywordsMap.put(" definition ", Definition);
-        keywordsMap.put(" distributed ", Definition);
-        keywordsMap.put(" ledger ", Definition);
-        keywordsMap.put(" fact ", Fact);
-        keywordsMap.put(" hash ", Fact);
-        keywordsMap.put(" mining ", Fact);
-        keywordsMap.put(" news ", NewsArticle);
-        keywordsMap.put(" announcement ", NewsArticle);
-        keywordsMap.put(" release ", NewsArticle);
-        keywordsMap.put(" career ", Job);
-        keywordsMap.put(" job ", Job);
-        keywordsMap.put(" position ", Job);
-        keywordsMap.put(" hiring ", Job);
+        keywordsMap.put(" definition ", DefinitionOfBlockchain);
+        keywordsMap.put(" distributed ", DefinitionOfBlockchain);
+        keywordsMap.put(" ledger ", DefinitionOfBlockchain);
+        keywordsMap.put(" fact ", FactsAboutBlockchain);
+        keywordsMap.put(" hash ", FactsAboutBlockchain);
+        keywordsMap.put(" mining ", FactsAboutBlockchain);
+        keywordsMap.put(" news ", NewsArticleBlockchain);
+        keywordsMap.put(" announcement ", NewsArticleBlockchain);
+        keywordsMap.put(" release ", NewsArticleBlockchain);
+        keywordsMap.put(" career ", BlockchainJobs);
+        keywordsMap.put(" job ", BlockchainJobs);
+        keywordsMap.put(" position ", BlockchainJobs);
+        keywordsMap.put(" hiring ", BlockchainJobs);
 
         for (Map.Entry<String, CategoryEnum> entry : keywordsMap.entrySet()) {
             if (value.contains(entry.getKey())) {

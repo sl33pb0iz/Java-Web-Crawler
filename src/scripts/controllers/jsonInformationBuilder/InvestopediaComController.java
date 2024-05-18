@@ -1,14 +1,10 @@
 package src.scripts.controllers.jsonInformationBuilder;
 
 import org.jsoup.select.Elements;
+import src.scripts.models.CategoryEnum;
 import src.scripts.models.WebsiteInformation;
 
 public class InvestopediaComController extends WebCrawlController {
-
-    @Override
-    public String getlinkFileCategory() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\jsonData\\NewsArticleBlockchain";
-    }
 
     @Override
     public String getLinkFile() {
@@ -74,6 +70,7 @@ public class InvestopediaComController extends WebCrawlController {
 
     @Override
     public void buildCategory(WebsiteInformation web) {
-
+        String summaryText = doc.select("p.comp.mntl-sc-block.finance-sc-block-html.mntl-sc-block-html").text();
+        web.setCategory(CategoryEnum.CategoryClassify(summaryText).toString());
     }
 }
