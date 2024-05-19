@@ -1,4 +1,4 @@
-package src.scripts.models;
+package src.scripts.entities;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,8 +28,6 @@ public enum CategoryEnum {
         keywordsMap.put(" distributed ", DefinitionOfBlockchain);
         keywordsMap.put(" ledger ", DefinitionOfBlockchain);
         keywordsMap.put(" fact ", FactsAboutBlockchain);
-        keywordsMap.put(" hash ", FactsAboutBlockchain);
-        keywordsMap.put(" mining ", FactsAboutBlockchain);
         keywordsMap.put(" news ", NewsArticleBlockchain);
         keywordsMap.put(" announcement ", NewsArticleBlockchain);
         keywordsMap.put(" release ", NewsArticleBlockchain);

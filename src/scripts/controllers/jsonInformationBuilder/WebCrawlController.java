@@ -3,7 +3,7 @@ package src.scripts.controllers.jsonInformationBuilder;
 import com.google.gson.Gson;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import src.scripts.models.WebsiteInformation;
+import src.scripts.entities.WebsiteInformation;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -15,11 +15,11 @@ public abstract class WebCrawlController {
 
     public String getlinkFileCategory(WebsiteInformation web) {
         String a = web.getCategory();
-        if(a == "BlockchainJobs") return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\jsonData\\BlockchainJobs";
-        if (a == "DefinitionOfBlockchain") return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\jsonData\\DefinitionOfBlockchain";
-        if (a == "FactsAboutBlockchain") return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\jsonData\\FactsAboutBlockchain";
-        if (a == "NewsArticleBlockchain") return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\jsonData\\NewsArticleBlockchain";
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\jsonData\\Other";
+        if(a == "BlockchainJobs") return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\BlockchainJobs";
+        if (a == "DefinitionOfBlockchain") return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\DefinitionOfBlockchain";
+        if (a == "FactsAboutBlockchain") return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\FactsAboutBlockchain";
+        if (a == "NewsArticleBlockchain") return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\NewsArticleBlockchain";
+        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\Other";
     }
     public abstract String getLinkFile();
     public void readDataFromFile() throws IOException {
