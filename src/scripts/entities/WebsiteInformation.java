@@ -1,4 +1,4 @@
-package src.scripts.models;
+package src.scripts.entities;
 
 public class WebsiteInformation {
     private String link;

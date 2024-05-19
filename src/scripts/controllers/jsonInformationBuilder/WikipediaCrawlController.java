@@ -1,14 +1,14 @@
 package src.scripts.controllers.jsonInformationBuilder;
 
 import org.jsoup.select.Elements;
-import src.scripts.models.CategoryEnum;
-import src.scripts.models.WebsiteInformation;
+import src.scripts.entities.CategoryEnum;
+import src.scripts.entities.WebsiteInformation;
 
 public class WikipediaCrawlController extends WebCrawlController {
 
     @Override
     public String getLinkFile() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\url\\WikipediaUrl";
+        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\url\\WikipediaUrl";
     }
 
     @Override

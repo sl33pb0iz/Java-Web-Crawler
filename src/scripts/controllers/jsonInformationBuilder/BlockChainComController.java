@@ -1,16 +1,13 @@
 package src.scripts.controllers.jsonInformationBuilder;
 
-import src.scripts.models.CategoryEnum;
-import src.scripts.models.WebsiteInformation;
-
-import java.net.MalformedURLException;
-import java.net.URL;
+import src.scripts.entities.CategoryEnum;
+import src.scripts.entities.WebsiteInformation;
 
 public class BlockChainComController extends WebCrawlController {
 
     @Override
     public String getLinkFile() {
-        return "C:\\Users\\Hung PC\\Java-Web-Crawler\\src\\datas\\url\\BlockchaincomUrl";
+        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\url\\BlockchaincomUrl";
     }
 
     @Override
