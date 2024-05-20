@@ -2,17 +2,9 @@ package src.scripts.controllers.jsonInformationBuilder;
 
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import src.scripts.models.CategoryEnum;
-import src.scripts.models.WebsiteInformation;
-
-import java.net.MalformedURLException;
-import java.net.URL;
+import src.scripts.entities.WebsiteInformation;
 
 public class UpgradComBuilder extends WebCrawlController{
-    @Override
-    public String getlinkFileCategory() {
-        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\UpgradJSON";
-    }
 
     @Override
     public String getLinkFile() {
@@ -31,22 +23,16 @@ public class UpgradComBuilder extends WebCrawlController{
     }
 
     @Override
-    public void buildSource(WebsiteInformation websiteInformation) {
+    public void buildSource(WebsiteInformation web) {
 
     }
 
     @Override
     public void buildType(WebsiteInformation web) {
-        try {
-            URL url = new URL(currentUrl);
-            String host = url.getHost();
-            String[] parts = host.split("\\.");
-            if (parts.length > 1) {
-                String type = parts[parts.length - 2]; // Get the second last part of the host
-                web.setType(type);
-            }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+        String[] parts = currentUrl.split("/");
+        if (parts.length > 1) {
+            String type = parts[3]; // Get the second last part of the host
+            web.setType(type);
         }
     }
 

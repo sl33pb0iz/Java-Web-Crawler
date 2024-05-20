@@ -3,7 +3,7 @@ package src.scripts.controllers.jsonInformationBuilder;
 import com.google.gson.Gson;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import src.scripts.models.WebsiteInformation;
+import src.scripts.entities.WebsiteInformation;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -13,7 +13,14 @@ public abstract class WebCrawlController {
     protected Document doc;
     protected String currentUrl;
 
-    public abstract String getlinkFileCategory();
+    public String getlinkFileCategory(WebsiteInformation web) {
+        String a = web.getCategory();
+        if(a == "BlockchainJobs") return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\BlockchainJobs";
+        if (a == "DefinitionOfBlockchain") return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\DefinitionOfBlockchain";
+        if (a == "FactsAboutBlockchain") return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\FactsAboutBlockchain";
+        if (a == "NewsArticleBlockchain") return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\NewsArticleBlockchain";
+        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\Other";
+    }
     public abstract String getLinkFile();
     public void readDataFromFile() throws IOException {
         File file = new File(getLinkFile());
@@ -28,32 +35,30 @@ public abstract class WebCrawlController {
             while ((line = br.readLine()) != null) {
                 urlsToCrawl.add(line);
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        FileWriter writer = new FileWriter(getlinkFileCategory());
-        BufferedWriter bw = new BufferedWriter(writer);
         for (String url : urlsToCrawl) {
-            bw.write(crawlDataFrom(url));
+            WebsiteInformation web = buildWebsiteInformation(url);
+            FileWriter writer = new FileWriter(getlinkFileCategory(web),true);
+            BufferedWriter bw = new BufferedWriter(writer);
+            bw.write(crawlDataFrom(web));
             bw.newLine();
+            bw.close();
         }
-        bw.close();
     }
 
-    public String crawlDataFrom(String url) throws IOException {
-        currentUrl = url;
-        doc = Jsoup.connect(currentUrl).get();
-
-        WebsiteInformation web = buildWebsiteInformation();
-
+    public String crawlDataFrom(WebsiteInformation web) throws IOException {
         Gson gson = new Gson();
         String jsonList = gson.toJson(web);
         return jsonList;
     }
 
     // Override phương thức này để trả về đường link
-    public WebsiteInformation buildWebsiteInformation() {
+    public WebsiteInformation buildWebsiteInformation(String url) throws IOException {
+        currentUrl = url;
+        doc = Jsoup.connect(currentUrl).get();
+
         WebsiteInformation web = new WebsiteInformation();
         buildTitle(web);
         buildLink(web);

@@ -1,15 +1,10 @@
 package src.scripts.controllers.jsonInformationBuilder;
 
 import org.jsoup.select.Elements;
-import src.scripts.models.CategoryEnum;
-import src.scripts.models.WebsiteInformation;
+import src.scripts.entities.CategoryEnum;
+import src.scripts.entities.WebsiteInformation;
 
 public class InvestopediaComController extends WebCrawlController {
-
-    @Override
-    public String getlinkFileCategory() {
-        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\InvestopediaJSON";
-    }
 
     @Override
     public String getLinkFile() {
@@ -35,7 +30,11 @@ public class InvestopediaComController extends WebCrawlController {
 
     @Override
     public void buildType(WebsiteInformation web) {
-
+        String[] parts = currentUrl.split("/");
+        if (parts.length > 1) {
+            String type = parts[3]; // Get the second last part of the host
+            web.setType(type);
+        }
     }
 
     @Override
@@ -71,5 +70,7 @@ public class InvestopediaComController extends WebCrawlController {
 
     @Override
     public void buildCategory(WebsiteInformation web) {
+        String summaryText = doc.select("p.comp.mntl-sc-block.finance-sc-block-html.mntl-sc-block-html").text();
+        web.setCategory(CategoryEnum.CategoryClassify(summaryText).toString());
     }
 }

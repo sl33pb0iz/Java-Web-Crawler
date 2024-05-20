@@ -1,36 +1,13 @@
 package src.scripts.controllers.jsonInformationBuilder;
 
-import src.scripts.models.CategoryEnum;
-import src.scripts.models.WebsiteInformation;
+import src.scripts.entities.CategoryEnum;
+import src.scripts.entities.WebsiteInformation;
 
 public class BlockChainComController extends WebCrawlController {
 
     @Override
-    public String getlinkFileCategory() {
-        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\BlockchainComJSON";
-    }
-
-    @Override
     public String getLinkFile() {
         return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\url\\BlockchaincomUrl";
-    }
-
-    @Override
-    public WebsiteInformation buildWebsiteInformation() {
-
-        WebsiteInformation web = new WebsiteInformation();
-        buildTitle(web);
-        buildLink(web);
-        buildSource(web);
-        buildType(web);
-        buildSummary(web);
-        /*buildDetail(web);*/
-        buildCreationDate(web);
-        buildAssociated(web);
-        buildSummary(web);
-        buildCategory(web);
-
-        return web;
     }
 
     @Override
@@ -44,13 +21,17 @@ public class BlockChainComController extends WebCrawlController {
     }
 
     @Override
-    public void buildSource(WebsiteInformation websiteInformation) {
+    public void buildSource(WebsiteInformation web) {
 
     }
 
     @Override
     public void buildType(WebsiteInformation web) {
-
+        String[] parts = currentUrl.split("/");
+        if (parts.length > 1) {
+            String type = parts[3] + " " + parts[4]; // Get the second last part of the host
+            web.setType(type);
+        }
     }
 
     @Override
