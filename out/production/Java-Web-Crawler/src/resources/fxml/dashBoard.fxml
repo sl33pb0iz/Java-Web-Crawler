@@ -44,43 +44,11 @@
                   <String fx:value="transparent" />
                </styleClass>
             </Button>
-            <Button fx:id="searchFeatureButton" mnemonicParsing="false" prefHeight="75.0" prefWidth="250.0" stylesheets="@../css/style.css" text="Search">
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../image/pngegg.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="around-side-border" />
-                  <String fx:value="transparent" />
-               </styleClass>
-            </Button>
-            <Button fx:id="orderOfAlgorithmsFeature" mnemonicParsing="false" prefHeight="75.0" prefWidth="250.0" stylesheets="@../css/style.css" text="Order of Algorithm">
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../image/sortOrder.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="around-side-border" />
-                  <String fx:value="transparent" />
-               </styleClass>
-            </Button>
             <Button fx:id="exitFeature" mnemonicParsing="false" prefHeight="75.0" prefWidth="250.0" stylesheets="@../css/style.css" text="Exit">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../image/search.png" />
+                        <Image url="@../image/—Pngtree—exit%20icon_3550242.png" />
                      </image>
                   </ImageView>
                </graphic>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -31,19 +33,29 @@
     <top>
         <Pane prefHeight="142.0" prefWidth="892.0" BorderPane.alignment="CENTER">
             <children>
-                <VBox prefHeight="150.0" prefWidth="547.0">
+                <VBox prefHeight="150.0" prefWidth="892.0">
                     <children>
-                        <Label prefHeight="35.0" prefWidth="568.0" text="CRAWL DATA">
-                            <font>
-                                <Font name="System Bold" size="24.0" />
-                            </font>
-                        </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="0.0" spacing="20.0">
+                     <children>
+                              <Label prefHeight="35.0" prefWidth="162.0" text="CRAWL DATA">
+                                  <font>
+                                      <Font name="System Bold" size="24.0" />
+                                  </font>
+                              </Label>
+                        <Button fx:id="crawlDataButton" mnemonicParsing="false" text="Show" />
+                        <TextField fx:id="fieldSearch" />
+                        <Button fx:id="searchButton" mnemonicParsing="false" text="Search" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
                         <VBox prefHeight="106.0" prefWidth="570.0" style="-fx-padding: 5; -fx-spacing: 10;">
                             <children>
                                 <HBox prefHeight="23.0" prefWidth="300.0">
                                     <children>
                                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number Results: " />
-                              <Text fx:id="textNumberResults" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+                              <Text fx:id="textNumberResults" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -53,17 +65,7 @@
                                 <HBox prefHeight="23.0" prefWidth="300.0">
                                     <children>
                                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number Categories: " />
-                              <Text fx:id="textNumberCategories" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Text>
-                                    </children>
-                                </HBox>
-                                <HBox prefHeight="23.0" prefWidth="300.0">
-                                    <children>
-                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Number Webs: " />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4">
+                              <Text fx:id="textNumberCategories" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -77,12 +79,6 @@
                <padding>
                   <Insets left="10.0" />
                </padding>
-                </VBox>
-                <VBox alignment="CENTER_RIGHT" layoutX="629.0" layoutY="25.0" prefHeight="101.0" prefWidth="362.0">
-                    <children>
-                        <HBox alignment="CENTER" prefHeight="33.0" prefWidth="200.0" />
-                        <HBox alignment="CENTER" prefHeight="33.0" prefWidth="200.0" />
-                    </children>
                 </VBox>
             </children>
         </Pane>

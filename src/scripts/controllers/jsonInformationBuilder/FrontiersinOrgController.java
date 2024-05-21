@@ -1,13 +1,11 @@
 package src.scripts.controllers.jsonInformationBuilder;
 
 import org.jsoup.select.Elements;
-import src.scripts.models.WebsiteInformation;
-import src.scripts.models.CategoryEnum;
-import java.net.MalformedURLException;
-import java.net.URL;
+import src.scripts.entities.WebsiteInformation;
+
 public class FrontiersinOrgController extends WebCrawlController{
     @Override
-    public String getLinkFile() {return "C:\\Users\\Admin\\Java-Web-Crawler\\src\\datas\\url\\FrontiersinOrgUrl";
+    public String getLinkFile() {return "..\\src\\datas\\url\\FrontiersinOrgUrl";
     }
     @Override
     public void buildTitle(WebsiteInformation web) {

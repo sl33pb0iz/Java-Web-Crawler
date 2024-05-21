@@ -75,11 +75,7 @@ public abstract class WebCrawlController {
         return web;
     }
 
-    // Override phương thức này để build ra class websiteinformation
-    // và cho nó sẽ gọi tới cái build bên dưới để build ra từng thuộc tính
 
-    // Các phương thức bên dưới sẽ lấy các giá trị từ link website
-    // và thực hiện các tính toán, thay đổi để set thông tin cho websiteinformation class
     public abstract void buildTitle(WebsiteInformation web);
     public abstract void buildLink(WebsiteInformation web);
     public abstract void buildSource(WebsiteInformation webs);
