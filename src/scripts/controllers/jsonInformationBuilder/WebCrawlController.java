@@ -15,11 +15,11 @@ public abstract class WebCrawlController {
 
     public String getlinkFileCategory(WebsiteInformation web) {
         String a = web.getCategory();
-        if(a == "BlockchainJobs") return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\BlockchainJobs";
-        if (a == "DefinitionOfBlockchain") return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\DefinitionOfBlockchain";
-        if (a == "FactsAboutBlockchain") return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\FactsAboutBlockchain";
-        if (a == "NewsArticleBlockchain") return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\NewsArticleBlockchain";
-        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\jsonData\\Other";
+        if(a == "BlockchainJobs") return "src\\datas\\jsonData\\BlockchainJobs";
+        if (a == "DefinitionOfBlockchain") return "src\\datas\\jsonData\\DefinitionOfBlockchain";
+        if (a == "FactsAboutBlockchain") return "src\\datas\\jsonData\\FactsAboutBlockchain";
+        if (a == "NewsArticleBlockchain") return "src\\datas\\jsonData\\NewsArticleBlockchain";
+        return "src\\datas\\jsonData\\Other";
     }
     public abstract String getLinkFile();
     public void readDataFromFile() throws IOException {

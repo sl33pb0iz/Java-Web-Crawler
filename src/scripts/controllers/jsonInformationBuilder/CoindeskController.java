@@ -11,7 +11,7 @@ public class CoindeskController extends WebCrawlController {
 
     @Override
     public String getLinkFile() {
-        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\url\\CoindeskUrl";
+        return "src\\datas\\url\\CoindeskUrl";
     }
 
     @Override

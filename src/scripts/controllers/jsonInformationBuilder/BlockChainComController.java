@@ -7,7 +7,7 @@ public class BlockChainComController extends WebCrawlController {
 
     @Override
     public String getLinkFile() {
-        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\url\\BlockchaincomUrl";
+        return "src\\datas\\url\\BlockchaincomUrl";
     }
 
     @Override

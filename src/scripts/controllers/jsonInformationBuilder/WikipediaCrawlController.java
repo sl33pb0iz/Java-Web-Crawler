@@ -8,7 +8,7 @@ public class WikipediaCrawlController extends WebCrawlController {
 
     @Override
     public String getLinkFile() {
-        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\url\\WikipediaUrl";
+        return "src\\datas\\url\\WikipediaUrl";
     }
 
     @Override

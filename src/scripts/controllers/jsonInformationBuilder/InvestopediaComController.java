@@ -8,7 +8,7 @@ public class InvestopediaComController extends WebCrawlController {
 
     @Override
     public String getLinkFile() {
-        return "D:\\Java\\New folder\\Java-Web-Crawler\\src\\datas\\url\\InvestopediaUrl";
+        return "src\\datas\\url\\InvestopediaUrl";
     }
 
     @Override
