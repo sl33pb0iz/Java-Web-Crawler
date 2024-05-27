@@ -1,10 +1,10 @@
 package src.scripts.controllers;
 
 import src.scripts.action.IAction;
-import src.scripts.controllers.jsonToObject.WebInformationService;
+import src.scripts.models.InformationService.WebInformationService;
 import src.scripts.entities.WebsiteInformation;
-import src.scripts.models.AlgorithmServices;
-import src.scripts.views.crawlDataView.CrawlDataView;
+import src.scripts.models.SearchService.AlgorithmServices;
+import src.scripts.views.CrawlDataView;
 
 import java.io.IOException;
 import java.util.ArrayList;

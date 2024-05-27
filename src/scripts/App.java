@@ -4,8 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import src.scripts.controllers.dashBoardViewController.DashBoardViewController;
-import src.scripts.views.dashBoardView.DashBoardView;
+import src.scripts.controllers.DashBoardViewController;
+import src.scripts.views.DashBoardView;
 
 public class App extends Application {
     @Override
